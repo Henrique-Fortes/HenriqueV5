@@ -1,0 +1,105 @@
+﻿
+@model HenriqueV5.Models.Product
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Changing the data of a SUPPLIER";
+
+}
+
+<div class="panel	panel-primary">
+
+    <div class="panel-heading">
+        Viewing details of a SUPPLIER
+    </div>
+    <div class="panel-body">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name)
+            <br />
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="glyphicon	glyphicon-user">
+                    </i>
+                </span>
+                @Html.EditorFor(model => model.Name,
+       new
+       {
+           htmlAttributes = new
+           {
+               @class =
+       "form-control",
+               disabled = "disabled"
+           }
+       })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Category.Name)
+            <br />
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="glyphicon	glyphicon-user">
+                    </i>
+                </span>
+                @Html.EditorFor(model => model.Category.Name,
+       new
+       {
+           htmlAttributes = new
+           {
+               @class =
+       "form-control",
+               disabled = "disabled"
+           }
+       })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Supplier.Name)
+            <br />
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="glyphicon	glyphicon-user">
+                    </i>
+                </span>
+                @Html.EditorFor(model => model.Supplier.Name,
+       new
+       {
+           htmlAttributes = new
+           {
+               @class =
+       "form-control",
+               disabled = "disabled"
+           }
+       })
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="panel-footer panel-info">
+        @Html.ActionLink("Edit", "Edit", new
+{
+    id = Model.ProductId
+}, new
+{
+    @class =
+    "btn	btn-info"
+})
+        @Html.ActionLink("Return to listing", "Index", null,
+    new { @class = "btn	btn-info" })
+    </div>
+
+</div>
+@section	ScriptPage	{
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('li').removeClass("active");
+            $('#liProdutos').addClass("active");
+        });
+    </script> }
+
+
